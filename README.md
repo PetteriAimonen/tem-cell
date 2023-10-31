@@ -1,11 +1,12 @@
 # Custom built TEM cell for EMC measurements
 
-![](images/side_view.jpg)
-
 This repository contains FreeCAD and KiCad design files for a [TEM cell](https://en.wikipedia.org/wiki/TEM_cell)
 with integrated [LISN](https://en.wikipedia.org/wiki/Line_Impedance_Stabilization_Network).
 
 When combined with a spectrum analyzer, it can be used for EMC pretest measurements.
+
+![](images/side_view.jpg)
+
 
 ## TEM cell structure
 
@@ -21,6 +22,27 @@ The default thickness of 1.6 mm is set for commonly available PCB material.
 Coaxial connectors are mounted at each end of the cell.
 In normal operation one end is terminated with a 50 ohm resistor
 and the other end is connected to spectrum analyzer or signal generator.
+
+## Dimensions
+
+The classic source for custom TEM cell builds is [Do-it-Yourself Fabrication of an Open TEM Cell for EMC Pre-compliance](http://eagle.chaosproject.com/sandbox/acstrial/newsletters/summer08/pp2.pdf) by Sandeep M. Satav et al, 2008. It provides the formula for characteristic impedance Z0 of the cell. Goal is to select dimensions so that Z0 equals 50 ohms, to facilitate connection to measurement instruments.
+
+$$ Z_0 = \frac{94.15 \Omega}{\sqrt{\epsilon_r} \cdot \left[ \frac{w}{2d(1 - \frac{t}{2d})} + \frac{C_f}{0.0885 \cdot \epsilon_r} \right] } $$
+
+For air as insulator (εr = 1) and thin material (t → 0), this can be simplified to:
+
+$$ Z_0 = \frac{94.15 \Omega}{\frac{w}{2d} + \frac{C_f}{0.0885}} $$
+
+with the parameters:
+
+* **w**: Width of the septum
+* **d**: Distance between septum and shield
+* **Cf**: Fringe capacitance
+
+The paper further provides value 0.053 pF/cm for the fringe capacitance, based
+on earlier paper [Generation of Standard EM Fields Using TEM Transmission Cells](https://www.ieee.li/pdf/essay/generation_of_standard_em_fields_using_tem_transmission_cells.pdf) by Myron L. Crawford, 1974. However Satav's paper describes an open TEM cell (with two walls), while Crawford's paper describes a closed TEM cell (with four walls).
+
+Open TEM cell dimensions calculated based on Cf = 0.053 result in a characteristic impedance 1.7 times higher than expected. Using scale models, I have determined that Cf = 0.03 is closer to the correct value for open TEM cells. Relative width of shields and septum affects this value and also uniformity of the electromagnetic field, but optimal configuration is yet unknown.
 
 ## Integrated LISN
 
