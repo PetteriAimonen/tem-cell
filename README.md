@@ -144,3 +144,10 @@ Signal coupling in TEM cell will depend both on the magnetic and electric field 
 One technique is to rotate the DUT into different orientations and let the maximum hold capture the largest emissions. At the end, power down DUT so that you can compare background noise against any spikes from the device.
 
 ![](images/TinySA_screenshot.png)
+
+## License
+
+All the design materials are available under CC-BY-4.0 license.
+Preferred attribution:
+
+> © 2023 Petteri Aimonen. Licensed under CC-BY-4.0. https://essentialscrap.com/
