@@ -131,7 +131,7 @@ It may be entirely incorrect. In any case, significant uncertainty remains becau
 
 ## TinySA Ultra configuration
 
-[Preset configuration file]() is provided for [TinySA Ultra](https://www.tinysa.org/) to simplify measurements.
+[Preset configuration file](Model_L500mm_W350mm_H200mm/TinySAUltra_Preset.prs) is provided for [TinySA Ultra](https://www.tinysa.org/) to simplify measurements.
 
 When applied, the preset configures green trace as correction factor table and subtracts it from the measurement traces. Output readings will approximate dBµV/m. Yellow trace is live measurement and purple trace is maximum level hold. Red trace is example of typical radiated emission limits, actual values will depend on applicable standard.
 
