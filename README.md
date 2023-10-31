@@ -5,6 +5,8 @@ with integrated [LISN](https://en.wikipedia.org/wiki/Line_Impedance_Stabilizatio
 
 When combined with a spectrum analyzer, it can be used for EMC pretest measurements.
 
+More construction details are available in [my blog article](http://essentialscrap.com/tem_cell/).
+
 ![](images/side_view.jpg)
 
 
